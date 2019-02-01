@@ -4,9 +4,9 @@ import json
 import token
 import pytest
 
-from modules import Auth
-from modules import Confirm
-from modules import AddChild
+from Auth import *
+from Confirm import *
+from AddChild import *
 
 base_url = 'https://qa1.helsi.me/'
 
