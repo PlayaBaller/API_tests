@@ -38,17 +38,17 @@ print(confirm.response)
 token = token.json()['sid']
 print(token)
 
-
+"""TEST
 def test_confirm():
     assert token == token
-
+"""
 # Request #3
 
 
 payload = {
     "patient": {
         "lastName": "O'sheaaa",
-        "firstName": "Jacksonssa",
+        "firstName": "Jacksonssffdfa",
         "middleName": "BallHustlaPlayaStunna323245777",
         "birthDate": "2018-05-27",
         "sex": True,
@@ -60,6 +60,7 @@ add_child = AddChild()
 add_child.send_request(payload, token)
 print(add_child.response)
 
-
+"""TEST
 def test_add_child():
     assert add_child.response == add_child.response
+"""
