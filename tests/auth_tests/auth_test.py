@@ -16,6 +16,7 @@ def test_add_child():
     auth.send_request(payload=payload)
 
     assert auth.response.status_code == 200
+    assert auth.response.json()['result']['name'] != "SMS_NOT_SEND"
 
     # Request #2
     payload = {
