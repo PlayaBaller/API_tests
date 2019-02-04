@@ -8,6 +8,7 @@ from models.http.AddChild import *
 def test_add_child():
     # Request #1
     payload = {
+        'code': '060z2',
         'phone': '380925765675',
         'platform': 'PISWeb'
     }
