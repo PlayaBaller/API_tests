@@ -6,8 +6,7 @@ from models.http.AddChild import *
 
 
 def test_add_child():
-
-    # 1
+    # Request #1
     payload = {
         'phone': '380925765675',
         'platform': 'PISWeb'
@@ -17,7 +16,7 @@ def test_add_child():
 
     assert auth.response.status_code == 200
 
-    # 2
+    # Request #2
     payload = {
         'code': auth.response.json()['debug']['code'],
         'phone': "380925765675",
@@ -34,7 +33,6 @@ def test_add_child():
     # assert token == token
 
     # Request #3
-
     payload = {
         "patient": {
             "lastName": "O'sheaaa",
@@ -50,5 +48,4 @@ def test_add_child():
     add_child.send_request(payload)
     print(add_child.response)
 
-    assert add_child.response == add_child.response
-
+    # assert add_child.response == add_child.response

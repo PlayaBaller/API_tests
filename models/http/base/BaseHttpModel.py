@@ -37,9 +37,7 @@ class BaseHttpModel:
             return None
 
         # TODO Move to Log class
-        print ("\nPOST " + self.url)
+        print("\nPOST " + self.url)
+        print("Payload: " + str(payload))
         print("Status code: " + str(self.response.status_code))
         print("Response: " + self.response.text + "\n------------------\n")
-
-
-
