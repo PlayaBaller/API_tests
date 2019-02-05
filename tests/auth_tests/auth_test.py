@@ -26,10 +26,7 @@ def test_add_child():
     }
     confirm = Confirm()
     confirm.send_request(payload=payload)
-    token = confirm.response
-    print(confirm.response)
-    token = token.json()['sid']
-    print(token)
+    token = confirm.response.json()['sid']
 
     # assert token == token
 
@@ -47,6 +44,5 @@ def test_add_child():
     }
     add_child = AddChild(token)
     add_child.send_request(payload)
-    print(add_child.response)
 
     # assert add_child.response == add_child.response
