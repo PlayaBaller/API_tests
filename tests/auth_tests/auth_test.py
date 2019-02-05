@@ -8,7 +8,6 @@ from models.http.AddChild import *
 def test_add_child():
     # Request #1
     payload = {
-        'code': '060z2',
         'phone': '380925765675',
         'platform': 'PISWeb'
     }
@@ -16,14 +15,14 @@ def test_add_child():
     auth.send_request(payload=payload)
 
     assert auth.response.status_code == 200
-    assert auth.response.json()['result']['name'] != "SMS_NOT_SEND"
+    assert auth.response.json()['result']['name'] == "SMS_NOT_SEND"
 
     # Request #2
     payload = {
-        'code': auth.response.json()['debug']['code'],
+        'code': '683J2',
         'phone': "380925765675",
-        'personalDataStatusWeb': None,
         'platform': "PISWeb"
+        # 'personalDataStatusWeb': None,
     }
     confirm = Confirm()
     confirm.send_request(payload=payload)
