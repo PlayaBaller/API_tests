@@ -36,10 +36,10 @@ def test_add_child():
     # Request #3
     payload = {
         "patient": {
-            "lastName": "O'sheaaa",
-            "firstName": "Jacksonssffdfa",
-            "middleName": "BallHustlaPlayaStunna323245777",
-            "birthDate": "2018-05-27",
+            "lastName": "Sean",
+            "firstName": "Combs",
+            "middleName": "PDiddy",
+            "birthDate": "2018-05-26",
             "sex": True,
             "isAutoPhone": True
         },
