@@ -17,7 +17,7 @@ def test_add_child():
     # Request #2
     confirm = Confirm()
     confirm.send_request(payload=BasePatient.payload)
-    token = confirm.response.json()['sid']
+    token = confirm.response.json()["sid"]
 
     # assert token == token
 
@@ -25,9 +25,9 @@ def test_add_child():
     # TODO Move test child entity data to separate class
     payload = {
         "patient": {
-            "lastName": "Sean",
-            "firstName": "Combssss33223$$$$",
-            "middleName": "PDiddy",
+            "lastName": "Derererepwswdwdw",
+            "firstName": "Allaldldlflreree",
+            "middleName": "Baller",
             "birthDate": "2018-05-26",
             "sex": True,
             "isAutoPhone": True
@@ -37,4 +37,4 @@ def test_add_child():
     add_child = AddChild(token)
     add_child.send_request(payload)
 
-    # assert add_child.response == add_child.response
+    assert add_child.response.status_code == 200
