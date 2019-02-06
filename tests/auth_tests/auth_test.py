@@ -3,6 +3,7 @@
 from models.http.Auth import *
 from models.http.Confirm import *
 from models.http.AddChild import *
+from models.http.base.BasePatient import *
 
 
 def test_add_child():
@@ -11,6 +12,7 @@ def test_add_child():
         'phone': '380925765675',
         'platform': 'PISWeb'
     }
+
     auth = Auth()
     auth.send_request(payload=payload)
 
