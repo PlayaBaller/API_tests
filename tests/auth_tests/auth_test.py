@@ -13,9 +13,9 @@ def test_add_child():
         'platform': 'PISWeb'
     }
     """
-    
+
     auth = Auth()
-    auth.send_request(payload=payload)
+    auth.send_request(payload=BasePatient.payload)
 
     assert auth.response.status_code == 200
     assert auth.response.json()['result']['name'] == "SMS_NOT_SEND"
@@ -28,7 +28,7 @@ def test_add_child():
         # 'personalDataStatusWeb': None,
     }
     confirm = Confirm()
-    confirm.send_request(payload=payload)
+    confirm.send_request(payload=BasePatient.payload)
     token = confirm.response.json()['sid']
 
     # assert token == token
@@ -37,7 +37,7 @@ def test_add_child():
     payload = {
         "patient": {
             "lastName": "Sean",
-            "firstName": "Combs",
+            "firstName": "Combssss33223",
             "middleName": "PDiddy",
             "birthDate": "2018-05-26",
             "sex": True,
