@@ -19,8 +19,6 @@ def test_add_child():
     confirm.send_request(payload=BasePatient.payload)
     token = confirm.response.json()["sid"]
 
-    # assert token == token
-
     # Request #3
     # TODO Move test child entity data to separate class
     payload = {
