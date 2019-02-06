@@ -1,9 +1,3 @@
-import requests
-import json
-from models.http.base.BaseHttpModel import *
-from models.http.AddChild import *
-
-
 class BasePatient:
     payload = {
             'code': '168w8',
@@ -13,5 +7,5 @@ class BasePatient:
 
     def __init__(self, payload):
         return payload
-
+# TODO add separate from __init__ method for passing payload dict data
 

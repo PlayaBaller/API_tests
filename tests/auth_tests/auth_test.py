@@ -7,13 +7,7 @@ from models.http.base.BasePatient import *
 
 
 def test_add_child():
-    """
-    payload = {
-        'phone': '380925765675',
-        'platform': 'PISWeb'
-    }
-    """
-
+    # Request #1
     auth = Auth()
     auth.send_request(payload=BasePatient.payload)
 
@@ -21,12 +15,6 @@ def test_add_child():
     assert auth.response.json()['result']['name'] == "SMS_NOT_SEND"
 
     # Request #2
-    payload = {
-        'code': '683J2',
-        'phone': "380925765675",
-        'platform': "PISWeb"
-        # 'personalDataStatusWeb': None,
-    }
     confirm = Confirm()
     confirm.send_request(payload=BasePatient.payload)
     token = confirm.response.json()['sid']
@@ -34,10 +22,11 @@ def test_add_child():
     # assert token == token
 
     # Request #3
+    # TODO Move test child entity data to separate class
     payload = {
         "patient": {
             "lastName": "Sean",
-            "firstName": "Combssss33223",
+            "firstName": "Combssss33223$$$$",
             "middleName": "PDiddy",
             "birthDate": "2018-05-26",
             "sex": True,
