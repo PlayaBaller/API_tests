@@ -4,11 +4,10 @@ from models.http.base.BaseHttpModel import *
 from models.http.AddChild import *
 
 
-class Patient(BaseHttpModel):
+class BasePatient:
     payload = {
-        'phone': '380925765675',
-        'platform': 'PISWeb'
+            'phone': '380925765675',
+            'platform': 'PISWeb'
     }
 
-    def __init__(self, payload):
-        pass
+

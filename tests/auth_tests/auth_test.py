@@ -7,12 +7,13 @@ from models.http.base.BasePatient import *
 
 
 def test_add_child():
-    # Request #1
+    """
     payload = {
         'phone': '380925765675',
         'platform': 'PISWeb'
     }
-
+    """
+    
     auth = Auth()
     auth.send_request(payload=payload)
 
