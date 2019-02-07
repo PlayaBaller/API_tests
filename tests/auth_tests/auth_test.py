@@ -23,8 +23,8 @@ def test_add_child():
     # TODO Move test child entity data to separate class
     payload = {
         "patient": {
-            "lastName": "Derererepwswdwdw",
-            "firstName": "Allaldldlflreree",
+            "lastName": "Deeererederepwswdwdw",
+            "firstName": "Allaldldlflrereeeded",
             "middleName": "Baller",
             "birthDate": "2018-05-26",
             "sex": True,
