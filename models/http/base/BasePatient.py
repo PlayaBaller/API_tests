@@ -8,7 +8,7 @@ class BasePatient:
     def __init__(self):
         pass
 
-    def pass_info(self, payload):
+    def post_info(self, payload):
         return payload
 
 

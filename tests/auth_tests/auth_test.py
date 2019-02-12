@@ -4,6 +4,9 @@ from models.http.Auth import *
 from models.http.Confirm import *
 from models.http.AddChild import *
 from models.http.base.BasePatient import *
+from models.http.base.BaseChild import *
+
+#TODO Add fixtures
 
 
 def test_add_child():
@@ -20,19 +23,7 @@ def test_add_child():
     token = confirm.response.json()["sid"]
 
     # Request #3
-    # TODO Move test child entity data to separate class
-    payload = {
-        "patient": {
-            "lastName": "Deeererederepwswdwdw",
-            "firstName": "Allaldldlflrereeeded",
-            "middleName": "Baller",
-            "birthDate": "2018-05-26",
-            "sex": True,
-            "isAutoPhone": True
-        },
-        "linkType": "6",
-    }
     add_child = AddChild(token)
-    add_child.send_request(payload)
+    add_child.send_request(payload=BaseChild.payload)
 
     assert add_child.response.status_code == 200
