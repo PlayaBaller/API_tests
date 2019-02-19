@@ -23,6 +23,8 @@ def test_add_child():
     token = confirm.response.json()["sid"]
 
     # Request #3
+    # TODO add second factor request and using of cookie identifier
+    # Request #4
     add_child = AddChild(token)
     add_child.send_request(payload=BaseChild.payload)
 

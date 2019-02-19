@@ -1,7 +1,7 @@
 class BasePatient:
     payload = {
             'phone': '380925765675',
-            'code': '7934851',
+            'code': '7934851fF',
             'platform': 'PISWeb'
     }
 
