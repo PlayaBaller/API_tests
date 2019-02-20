@@ -1,8 +1,8 @@
 from models.http.base.BaseHttpModel import *
 
 
-class Auth(BaseHttpModel):
-    url = 'https://qa1.helsi.me/api/healthy/send?debug=true'
+class Login(BaseHttpModel):
+    url = 'https://qa1.helsi.me/api/healthy/accounts/login'
 
     def __init__(self):
         BaseHttpModel.__init__(self)
