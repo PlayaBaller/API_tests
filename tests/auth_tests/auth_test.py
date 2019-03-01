@@ -3,11 +3,10 @@
 from models.http.Login import *
 from models.http.Password import *
 from models.http.SecondFactor import *
+from models.http.Confirm import *
 from models.http.AddChild import *
 from models.http.base.BasePatient import *
 from models.http.base.BaseChild import *
-
-# TODO Add fixtures
 
 
 def test_add_child():
@@ -16,15 +15,21 @@ def test_add_child():
     login.send_request(payload=BasePatient.payload_login)
 
     assert login.response.status_code == 200
-    assert login.response.json()['result']['name'] == "SMS_NOT_SEND"
 
     # Request #2
     password = Password()
     password.send_request(payload=BasePatient.payload_pass)
-#   token = password.response.json()["sid"]
+    user_id = password.response.json()
+#   assert auth.response.json()['result']['name'] == "SMS_NOT_SEND"
+    assert password.response.status_code == 202
 
-#   TODO Refactor all requests and add third and fourth requests SecondFactor && AddChild
-    # Request 4
+    # Request #3
+    second_factor = SecondFactor(user_id)
+    second_factor.send_request(payload=BasePatient.payload_pass)
+
+
+
+
 #    add_child = AddChild(token)
 #    add_child.send_request(payload=BaseChild.payload)
 

@@ -18,6 +18,8 @@ class BaseHttpModel:
                 'Authorization': 'Bearer ' + str(self.token)
             }
         pass
+    # TODO if cookie identifier = Null >> call SecondFactor class methods
+    # TODO elif cookie identifier not Null >> skip SecondFactor class methods
 
     def send_request(self, payload, method="get"):
         if method == "get":
