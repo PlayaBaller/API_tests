@@ -19,18 +19,17 @@ def test_add_child():
     # Request #2
     password = Password()
     password.send_request(payload=BasePatient.payload_pass)
-    user_id = password.response.json()
+#   user_id = password.response.json()
 #   assert auth.response.json()['result']['name'] == "SMS_NOT_SEND"
     assert password.response.status_code == 202
 
     # Request #3
-    second_factor = SecondFactor(user_id)
+    second_factor = SecondFactor()
     second_factor.send_request(payload=BasePatient.payload_pass)
+    assert second_factor.response.status_code == 200
 
-
-
-
-#    add_child = AddChild(token)
-#    add_child.send_request(payload=BaseChild.payload)
-
-#    assert add_child.response.status_code == 200
+    # Request #4
+#    token = second_factor.response.json(['sid'])
+    add_child = AddChild()
+    add_child.send_request(payload=BaseChild.payload)
+    assert add_child.response.status_code == 200
