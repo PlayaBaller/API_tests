@@ -2,7 +2,7 @@ from models.http.base.BaseHttpModel import *
 
 
 class Confirm(BaseHttpModel):
-    url = 'https://qa1.helsi.me/api/healthy/accounts/confirm'
+    url = 'https://qa3.helsi.me/api/healthy/confirm'
 
     def __init__(self):
         BaseHttpModel.__init__(self)

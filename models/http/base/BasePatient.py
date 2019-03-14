@@ -6,7 +6,7 @@ class BasePatient:
 
     payload_pass = {
         "phone": "380925765675",
-        "password": "P1AyaHu$11a",
+        "password": "0599042",
         "isRestoredPassword": "false",
         "isRegisteredWithoutPassword": "false",
         "platform": "PISWeb"
