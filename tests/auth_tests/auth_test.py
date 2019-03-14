@@ -19,8 +19,8 @@ def test_add_child():
     confirm.send_request(payload=BasePatient.payload)
     assert confirm.response.status_code == 200
 
-    # Request #4
-#    token = second_factor.response.json(['sid'])
-#    add_child = AddChild(token)
-#    add_child.send_request(payload=BaseChild.payload)
-#    assert add_child.response.status_code == 200
+    # Request #3
+    token = confirm.response.json(['sid'])
+    add_child = AddChild(token)
+    add_child.send_request(payload=BaseChild.payload)
+    assert add_child.response.status_code == 200
