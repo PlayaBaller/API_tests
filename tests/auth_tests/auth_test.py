@@ -1,8 +1,6 @@
 # coding: utf-8
 
 from models.http.Send import *
-from models.http.Password import *
-from models.http.SecondFactor import *
 from models.http.Confirm import *
 from models.http.AddChild import *
 from models.http.base.BasePatient import *
@@ -11,20 +9,15 @@ from models.http.base.BaseChild import *
 
 def test_add_child():
     # Request #1
-    login = Login()
-    login.send_request(payload=BasePatient.payload_login)
+    send = Send()
+    send.send_request(payload=BasePatient.post_login)
 
-    assert login.response.status_code == 200
+    assert send.response.status_code == 200
 
     # Request #2
-    password = Password()
-    password.send_request(payload=BasePatient.payload_pass)
-    assert password.response.status_code == 202
-
-    # Request #3
-    second_factor = SecondFactor()
-    second_factor.send_request(payload=BasePatient.payload_pass)
-    assert second_factor.response.status_code == 200
+    confirm = Confirm()
+    confirm.send_request(payload=BasePatient.post_login)
+    assert confirm.response.status_code == 200
 
     # Request #4
 #    token = second_factor.response.json(['sid'])
