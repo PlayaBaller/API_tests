@@ -2,7 +2,7 @@ from models.http.base.BaseHttpModel import *
 
 
 class AddChild(BaseHttpModel):
-    url = 'https://qa1.helsi.me/api/healthy/patients'
+    url = 'https://qa3.helsi.me/api/healthy/patients'
 
     def __init__(self, token=None):
         BaseHttpModel.__init__(self, token)

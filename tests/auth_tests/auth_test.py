@@ -17,10 +17,12 @@ def test_add_child():
     # Request #2
     confirm = Confirm()
     confirm.send_request(payload=BasePatient.payload)
+    token = confirm.response.json()["sid"]
+    print(token)
     assert confirm.response.status_code == 200
 
     # Request #3
-    token = confirm.response.json(['sid'])
+
     add_child = AddChild(token)
     add_child.send_request(payload=BaseChild.payload)
     assert add_child.response.status_code == 200
