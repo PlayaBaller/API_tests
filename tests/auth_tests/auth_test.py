@@ -10,13 +10,13 @@ from models.http.base.BaseChild import *
 def test_add_child():
     # Request #1
     send = Send()
-    send.send_request(payload=BasePatient.post_login)
+    send.send_request(payload=BasePatient.payload)
 
     assert send.response.status_code == 200
 
     # Request #2
     confirm = Confirm()
-    confirm.send_request(payload=BasePatient.post_login)
+    confirm.send_request(payload=BasePatient.payload)
     assert confirm.response.status_code == 200
 
     # Request #4
