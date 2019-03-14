@@ -5,6 +5,7 @@ from models.http.Confirm import *
 from models.http.AddChild import *
 from models.http.base.BasePatient import *
 from models.http.base.BaseChild import *
+import pytest
 
 
 def test_add_child():
