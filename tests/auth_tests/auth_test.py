@@ -23,9 +23,6 @@ def test_add_child():
     assert confirm.response.status_code == 200
 
     # Request #3
-
-# def test_add_child():
-
     add_child = AddChild(token)
     add_child.send_request(payload=BaseChild.payload)
     assert add_child.response.status_code == 200
