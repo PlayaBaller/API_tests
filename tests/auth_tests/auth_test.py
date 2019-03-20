@@ -8,7 +8,7 @@ from models.http.base.BaseChild import *
 import pytest
 
 
-def test_add_child():
+"""def test_add_child():
     # Request #1
     send = Send()
     send.send_request(payload=BasePatient.payload)
@@ -26,10 +26,18 @@ def test_add_child():
     add_child = AddChild(token)
     add_child.send_request(payload=BaseChild.payload)
     assert add_child.response.status_code == 200
+"""
 
 
-@pytest.fixture()
-def auth():
+def setup():
+    print('setting up')
+
+
+def teardown():
+    print('tearing down')
+
+
+def test_auth():
     send = Send()
     send.send_request(payload=BasePatient.payload)
 
