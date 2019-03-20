@@ -29,15 +29,23 @@ import pytest
 """
 
 
-def setup():
-    print('setting up')
+@pytest.fixture()
+def config_child_name():
+    payload = {
+        "patient": {
+            "lastName": "SSdsdsdsd",
+            "firstName": "Allfgdfirillohldldwwwlflrereeeded",
+            "middleName": "Balfgfdgffffededff",
+            "birthDate": "2011-05-25",
+            "sex": True,
+            "isAutoPhone": True
+        },
+        "linkType": "6",
+    }
+    return payload
 
 
-def teardown():
-    print('tearing down')
-
-
-def test_auth():
+def test_auth(config_child_name):
     send = Send()
     send.send_request(payload=BasePatient.payload)
 
@@ -45,3 +53,11 @@ def test_auth():
     confirm.send_request(payload=BasePatient.payload)
     token = confirm.response.json()["sid"]
     print(token)
+    assert confirm.response.status_code == 200
+
+    add_child = AddChild(token)
+    add_child.send_request(payload=config_child_name)
+    assert add_child.response.status_code == 200
+
+
+
