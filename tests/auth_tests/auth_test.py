@@ -33,8 +33,8 @@ import pytest
 def config_child_name():
     payload = {
         "patient": {
-            "lastName": "SSdsDDDDdsd",
-            "firstName": "AllDSFDSFSDdfirillohldldwwwlflrereeeded",
+            "lastName": "Hustler",
+            "firstName": "BALLERKilleR",
             "middleName": "Balfgfdgffffededff",
             "birthDate": "2009-05-25",
             "sex": True,
