@@ -7,7 +7,6 @@ from models.http.base.BasePatient import *
 from models.http.base.BaseChild import *
 import pytest
 
-
 """def test_add_child():
     # Request #1
     send = Send()
@@ -58,6 +57,3 @@ def test_add_child(config_child_name):
     add_child = AddChild(token)
     add_child.send_request(payload=config_child_name)
     assert add_child.response.status_code == 200
-
-
-
