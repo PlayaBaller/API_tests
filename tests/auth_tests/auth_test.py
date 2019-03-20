@@ -33,10 +33,10 @@ import pytest
 def config_child_name():
     payload = {
         "patient": {
-            "lastName": "SSdsdsdsd",
-            "firstName": "Allfgdfirillohldldwwwlflrereeeded",
+            "lastName": "SSdsDDDDdsd",
+            "firstName": "AllDSFDSFSDdfirillohldldwwwlflrereeeded",
             "middleName": "Balfgfdgffffededff",
-            "birthDate": "2011-05-25",
+            "birthDate": "2009-05-25",
             "sex": True,
             "isAutoPhone": True
         },
@@ -45,7 +45,7 @@ def config_child_name():
     return payload
 
 
-def test_auth(config_child_name):
+def test_add_child(config_child_name):
     send = Send()
     send.send_request(payload=BasePatient.payload)
 
