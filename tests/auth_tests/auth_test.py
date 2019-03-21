@@ -32,9 +32,9 @@ import pytest
 def config_child_name():
     payload = {
         "patient": {
-            "lastName": "Hustler",
-            "firstName": "BALLERKilleR",
-            "middleName": "Balfgfdgffffededff",
+            "lastName": "2chainz",
+            "firstName": "Hairwavekiller",
+            "middleName": "22222chainzzzz",
             "birthDate": "2009-05-25",
             "sex": True,
             "isAutoPhone": True
@@ -44,7 +44,7 @@ def config_child_name():
     return payload
 
 
-def test_add_child(config_child_name):
+def test_add_child(config_child_name):  # passing fixture function as an argument to test function
     send = Send()
     send.send_request(payload=BasePatient.payload)
 
@@ -55,5 +55,5 @@ def test_add_child(config_child_name):
     assert confirm.response.status_code == 200
 
     add_child = AddChild(token)
-    add_child.send_request(payload=config_child_name)
+    add_child.send_request(payload=config_child_name)  # passing fixture function data to send request method 
     assert add_child.response.status_code == 200
